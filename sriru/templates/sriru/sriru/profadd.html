@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body style="background:#DCDCDC">
+{% load static %}
+
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "jquery-ui-1.9.2.custom/css/start/jquery-ui-1.9.2.custom.min.css" %}">
+<script type="text/javascript"  src="{%static "jquery-ui-1.9.2.custom/js/jquery-1.8.3.js"%}"></script>
+<script type="text/javascript"  src="{%static "jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.js"%}"></script>
+<script type="text/javascript"  src="{%static "jquery-ui-1.9.2.custom/jquery-ui-1.9.2.custom.min.js"%}"></script>
+<script>
+$(function() {
+  $( "#id_year_of_joining " ).datepicker();
+});
+</script>
+<style type="text/css">
+	#ui-datepicker-div {
+		
+	}
+	.ui-datepicker-calendar {
+		background-color:#aaaaaa;
+
+	}
+	.ui-datepicker-header {
+		background: rgba(130,121,101,1);
+	}
+	
+</style>
+{% block content %}
+<div style="background-color:#BFFF1B;border: 3px solid #6A7F34;">
+<center>
+<img src="{%static "sm_logo.png"%}">
+</center>
+</div>
+<H2><CENTER>PROFESSOR REGISTRATION FORM</CENTER></H2>
+
+<div style="background-color:#DCDCDC;border: 2px #6A7F34">
+
+<form action="/sriru/profadd" method="POST">{% csrf_token %}
+<CENTER>
+<ul >
+<div style="color:#000000">
+<table>
+
+{% for field in form %}
+		<tr>
+        <td>{{ field.label_tag }}</td>
+        <td>{{ field }}</td>
+        <td><font  size="5"color="red">{{ field.errors }}</font></td>
+        </tr>
+        
+{% endfor %}
+</table>
+</div>
+</ul>
+</CENTER>
+<center>
+<input type="submit" name="submit" class="btn btn-info" value="SUBMIT" >
+
+</center>
+<br>
+<font size="4" COLOR="GREEN" margin-right="10PX"><a href="/sriru/admin" class="btn btn-primary"><<-ADMIN PAGE</a></font>  
+<br>
+{% endblock %}
+<div>
+</body>
+</html>

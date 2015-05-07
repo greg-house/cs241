@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body style="background:#DCDCDC">
+{% load static %}
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+{% block content %}
+<div style="background-color:#BFFF1B;border: 3px solid #6A7F34;">
+<center>
+<img src="{%static "sm_logo.png"%}">
+</center>
+</div>
+<h3><center>SPONSER REGISTRATION FORM</center></h3>
+
+
+<div style="background-color:#DCDCDC"> 
+<form action="/sriru/sponsadd" method="POST">{% csrf_token %}
+<CENTER>
+<ul >
+<div style="color:#000000">
+<table>
+{% for field in form %}
+		<tr>
+        <td><font size="2">{{ field.label_tag }}</font></td>
+        <td><font size="2">{{ field }}</font></td>
+        <td><font  size="5"color="red">{{ field.errors }}</font></td>
+        </tr>
+{% endfor %}
+</table>
+</div>
+</ul>
+</CENTER>
+<center>
+<input type="submit" name="submit" class="btn btn-info" value="SUBMIT">
+</center>
+<font size="4" COLOR="GREEN" margin-right="10PX"><a href="http://127.0.0.1:8000/sriru/admin" class="btn btn-primary"><<-ADMIN PAGE</a></font> 
+{% endblock %}
+</div>
+<br>
+<br>
+<br>
+<p>    </p>
+
+</body>
+</html>

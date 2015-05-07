@@ -1,0 +1,230 @@
+<!Doctype HTML>
+<html>
+<title>
+	SRIRU
+</title>
+<head>
+
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static "css/reset.css" %}" type="text/css" />
+<link rel="stylesheet" href="{% static "css/styles.css" %}" type="text/css" />
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<!--link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script-->
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+
+<script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "js/slider.js" %}"></script>
+<script type="text/javascript" src="{% static "js/superfish.js" %}"></script>
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+--><script type="text/javascript" src="{% static "js/custom.js" %}"></script>
+
+
+<body>
+
+{% block content %}
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.item').fadeOut();
+	$('.menu').click(function() {
+		p = $(this).attr('id');
+		$('.item').fadeOut();
+		p = p + 'a';
+		$('#'+p).fadeIn();
+	});
+});
+</script>
+<div id="container" class="width">
+
+    <header> 
+	<div class="width">
+
+    		<h1><a>Director</a></h1>
+
+		<nav>
+	
+    			<ul class="sf-menu dropdown">
+
+<!--style>
+.dropdown {
+	font-size:120%;
+}
+</style-->
+        			<li class="selected"><a id="0" class="dropdown menu"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp&nbspHome</a></li>
+
+            			<li>
+
+					<a class="dropdown" ><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbspProjects</a>
+            			
+					<ul>
+                			
+						<li><a class="menu" id="2" >Approved Projects</a></li>
+                			</ul>
+
+            			</li>
+
+				<li>
+
+					<a class="dropdown" ><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbspProjects</a>
+            			
+					<ul>
+                			
+						<li><a class="menu" id="3" >Upcoming Projects</a></li>
+                			</ul>
+
+            			</li>
+
+	     			
+            
+				<li>
+
+					<a class="dropdown" ><span class="glyphicon glyphicon-usd" aria-hidden="true"></span>&nbspPurchases</a>
+            				
+					<ul>
+                   				<li><a class="menu" id="4">Unapproved Purchases</a></li>
+                			</ul>
+
+            			</li>
+            
+				<li><a class="dropdown" href="/sriru/logout6"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsplogout</a></li>
+       			</ul>
+       			
+			
+			<div class="clear"></div>
+    		</nav>
+       	</div>
+
+	<div class="clear"></div>
+
+       
+    </header>
+
+    <div id="body" class="width" style="height:500px;">
+
+
+
+		<section id="content" class="two-column with-right-sidebar">
+
+	    <article>
+
+				
+<center>
+	<div id="0a" class="item home">
+		<h3>Director</h3>
+	</div>
+</center>		
+<center>
+<div id="2a" class="item">
+<td>
+<center>
+<h3>Approved Projects</h3>
+	<ol>
+	{% for proj in approvedproj %}
+	<li><a href="/sriru/proj/{{ proj.pk }}">{{ proj.title }}</a></li>
+	{% endfor %} 
+	</ol>
+
+</div>
+</center>
+
+<div id="3a" class="item">
+<td>
+<center>
+<h3>Upcoming Projects</h3>
+	<ol>
+	{% for proj in upcomproj %}
+	<li><a href="/sriru/proj/{{ proj.pk }}">{{ proj.title }}</a></li>
+	{% endfor %} 
+	</ol>
+
+</div>
+</center>
+
+<div id="4a" class="item">
+<td>
+<center>
+	<h3>Unapproved Purchases</h3>
+	<ol>
+	{% for q in dirpur %}
+		<p>Project:<a href="/sriru/proj/{{ q.sanc_head.project.pk }}">{{q.sanc_head.project.title}}</a></p>
+		<p>PI:<a href="/sriru/prof/{{q.sanc_head.project.PI.pk}}">{{q.sanc_head.project.PI}}</a></p>
+		<p>Estimated Cost:{{q.est_cost}}</p>
+		<p>Sanction Head:{{q.sanc_head}}</p>
+		<p>Existing Amount in Sanction Head:{{q.sanc_head.left_amt}}</p>
+		<span class=badge><a href="/sriru/gentable/{{ q.sanc_head.project.pk }}/">ExpenseTable</a></span>
+		<p>Item:{{q.prod_title}}</p>
+		<p>Item Specifications:{{q.prod_spec}}</p>
+		<p>Quantity:{{q.quantity}}</p>
+		<a href="/sriru/dirapprove/{{q.pk}}"><span class=badge>Approve</span></a>
+		<a href="/sriru/rejdir/{{q.pk}}"><span class=badge>Reject</span></a>
+	{% endfor %}
+	<ol>
+	
+</center>
+</div>
+           
+		</article>
+	
+		<article class="expanded">
+
+
+
+			
+          
+		
+		</article>
+        </section>
+       
+        <aside class="sidebar big-sidebar right-sidebar">
+	
+	
+            <ul>
+
+<style>
+.item {
+	display:none;
+}
+.msg>ul{
+	display:none;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.home').fadeIn();
+	$('.msg').click(function() {
+		$('.msg').children('a').removeClass('selected');
+		$('.msg').children('ul').fadeOut();
+		$(this).children("a").addClass('selected');
+		$(this).children("ul").fadeIn();
+	});
+});
+</script>                
+               
+		
+               
+        
+	
+   		    
+            </ul>
+		
+        </aside>
+    	<div class="clear"></div>
+    </div>
+    <footer class="width">
+        <div class="footer-content">            
+            <div class="clear"></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; IIT Patna <a href="http://iitp.ac.in">IIT Patna</a></p>
+         </div>
+    </footer>
+</div>
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!Doctype HTML>
+<html>
+<title>
+	SRIRU
+</title>
+<head>
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+</head>
+<body>
+{% block content %}
+<table border='5' style="width:100%" class="table-hover table">
+		<tr>
+			
+			DEBIT ADVICE SHEET
+		</tr>
+		<tr>
+		    <td>Name Of Beneficiries</td>
+		    <td>Amount</td>		
+		    <td>Bank Name</td>
+		    <td>Account No</td>
+		    <td>IFSC</td>
+		    <td>Accounting Head</td>
+		    <td>Purpose</td>
+		</tr>
+	{% for p in comp_pur %}
+		<tr>
+		    <td>{{p.vendor.name}}</td>
+		    <td>{{p.cost}}</td>		
+		    <td>{{p.vendor.BankName}}</td>
+		    <td>{{p.vendor.acc_no}}</td>
+		    <td>{{p.vendor.IFSC}}</td>
+		    <td>{{p.purchase.sanc_head}}</td>
+		    <td>Bill no-{{p.bill_no}}</td>
+		</tr>
+	{% endfor %}
+		<tr>
+		    <td></td>
+		    <td>{{amt}}</td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		</tr>
+</table>
+<br>
+<br>
+<table style="width:100%">
+<td>Accounts Officer </td>
+<td>Registrar</td>
+</table>
+<center>
+<h4><a href="/sriru/dascomp">Save</a></h4>
+</center>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,397 @@
+<html>
+<body style="background:#DCDCDC">
+{% load static %}
+<!--script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+	
+	<div style="background-color:#BFFF1B;border: 3px solid #6A7F34;">
+	<center>
+	<img src="{%static "sm_logo.png"%}">
+	</center>
+	</div-->
+	<div>
+		<center>
+	<img src="{%static "sm_logo.png"%}">
+	</center>
+	</div>
+	{% block content %}
+	<div>
+		<p>
+		Date: {{tender.release_date}} </p>
+		<h3>SUB: Procurement of {{tender.purchase.prod_title}}</h3>
+		<p>Indian Institute of Technology Patna, an Institute of National Importance, invites sealed tenders
+	from reputed Original Equipment Manufacturers / Authorised Dealers / Bidders for quality
+	procurement of {{tender.purchase.prod_title}}</p>
+		<p>All interested tenderers are requested to send their sealed quotation as per technical
+	specifications in
+	Annexure – I (a) & (b)
+	and price bid as per
+	Annexure-III (a) or (b) (under two
+	bid system).
+	For general terms & conditions, instructions to bidders etc. please refer
+	Annexure-II.</p>
+		<p>Tender will be accepted upto {{tender.submission_date}}</p>
+		<p>Detailed descriptions of the item and instructions for submitting your offer can be downloaded
+from our website
+www.iitp.ac.in/tenders
+. However, a cross Demand Draft / Bank Guaranty (for
+six months) of
+Rs. 1000/- (Non-refundable)
+towards Tender Fee and Rs. 10,000/- (Refundable)
+towards
+EMD
+in favour of the
+Registrar, IIT Patna
+payable at Patna should be submitted in a
+separate sealed envelop along with your quotation.
+ </p>
+		<p>The proposals must be sent in two separate sealed envelopes (Technical Bid and Price Bid)
+duly subscribed with Reference number and Tender Notice details as appended hereunder:-</p>
+		<table border='1' style="width:100%" class="table-hover table">
+		<tr><center>TENDER FOR SUPPLY OF {{tender.purchase.prod_title}} TO IIT PATNA, DATED {{tender.release_date}}, LAST DATE FOR
+SUBMISSION. {{tender.submission_date}} UPTO 5 PM.</center><tr>
+
+<tr>To,</tr>
+<tr>The Registrar</tr>
+<tr>Indian Institute of Technology Patna</tr>
+<tr>Navin Govt Polytechnic Campus,</tr>
+<tr>Patliputra Colony, Patna – 13 Bihar, INDIA </tr>
+		</table>
+		<p>The price bid will be opened only of those firms, who will be found technically qualified after
+evaluation of their technical bids.
+The technical bids will be opened on {{tender.result_date}} At 05:00
+PM,
+in the office/department at IIT Patna, in the presence of the Bidders/Vendors or their
+authorized representative who wish to be present. </p>
+		<h3>ANNEXURE 1(a)</h3>
+		<h3>DETAILED SPECIFICATIONS</h3>
+		<p>{{tender.purchase.prod_spec}}</p>
+		<h3>ANNEXURE 1(b)</h3>
+		<h3>FORMAT OF COMPAILENCE STATEMENT</h3>
+
+		<table border='1' style="width:100%" >
+		<tr><td>Para of Tender
+			Enquiry
+			Specification </td>
+					<td>Specification of
+			Equipment
+			Offered </td>
+				<td>Compliance to
+			Tender specification
+			whether yes or no
+			(if yes indicate the
+			page no and Put a
+			Flag also highlight
+			the matching
+			specification) </td><td>In case of non-
+			compliance
+			deviation from
+			Tender specification
+			to be indicated in
+			unambiguous term. </td>
+		</tr>
+		<tr><td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td></tr>
+		</table>
+
+		<p> * The compliance certificate along with the page no indication (i.e. required spec and
+availability of the page in the entire tender documents by flagging or giving page no) must
+be submitted with the bid for evaluation. Firm
+not submitting the model/spec and their details
+availability in the bid documents by flagging/page no may not be considered for evaluation.</p>
+
+		<h3>Annexure - II</h3>
+		<h3>NOTE:
+The bid documents are not transferable and the firm’s seal and signature of the
+authorized official must appear on all papers and envelopes submitted.</h3>
+		<center><h3>INSTRUCTION TO BIDDERS:</h3></center>
+		<h3>Two/Double Bids:</h3>
+		<p>01.
+In case of two-bid system, tenders will have to be submitted in TWO PARTS i.e. (a)
+Technical Bid and (b) Price Bid, in two separate properly sealed covers indicating the type of
+Bid; and both these covers will have to be again put in to a single sealed cover. Also the
+address of the firm submitting the tender and the officer, to whom the tender is addressed,
+must appear distinctly on both the inner sealed covers, indicating also TECHNICAL BID /
+PRICE BID as may be applicable. </p>
+		<p>02. In the part relating to Technical Bid
+, the OEM/Vendor must provide the followings:-<br>
+(a) Details of the technical features of the offered Equipment vis-à-vis specification as per
+Annexure – I;<br>
+(b) Standard Technical literature on each of the items offered;<br>
+(c) Dealership certificate on the offered products from OEM in case of dealer/s;<br>
+(d) List of reputed organizations/Institutions, where similar orders have been executed
+(copies of the purchase/work order will have to be enclosed). The bidders / OEM should
+attach a self declaration stating that he is not banned / debarred from working with any
+Central Government / PSU / State Govt of India / Any other Govt Agencies or any Institute of
+National / International importance.<br>
+(e) Up-to-date Sales Tax clearance certificate (
+for vendors outside the State of Bihar
+)/VAT
+registration certificate indicating also the TIN number (
+for vendors from within the State of
+Bihar
+) of the FIRM will have to accompany the tender to be submitted;<br>
+(f) Copy of PAN must be submitted of FIRM / Bidder along with the Technical Bid;<br>
+(g) Banker’s details of tendering FIRM / Bidder should be clearly mentioned;<br>
+(h) Details of nature and maximum period of
+Warranty
+offered by the OEM/Bidder;<br>
+(i) Amount of Earnest Money Deposited
+(EMD),
+in the form of Demand Draft only, will have
+to be clearly stated and the same will have to be enclosed with
+Technical Bid
+only;<br>
+(j) A copy of the Price bid,
+WITHOUT MENTIONING THE PRICES
+,
+will have to be provided
+as part of the Technical Bid document.<br> </p>
+		<p>03. In the part relating to Price Bid
+, the OEM/Vendor must provide the following:-
+(a) Quantity, basic price (against item-wise deta
+ils of specifications of each of the offered
+items);
+(b) Prices of each of the optional accessories, as required by specifications and may be
+relevant for offered Equipment, will have to be specifically stated in the quotation:
+(c) Central / Sales Tax/ VAT (as percentage of basic price + packing & forwarding charges if
+any)
+(d) Installation & commissioning charge (including Service Tax), to be shown item-wise
+extra, if any.
+(e) Freight & insurance charge, if any.
+(g) Annual Maintenance contract
+(AMC)
+rate (after expiry of warranty period) is to be clearly
+indicated – preferably in both comprehensive and non-comprehensive terms,
+failure to
+which the offer may not be considered even if it turns out at the lowest price. </p>
+
+<h3>Terms & Conditions:</h3>
+		<p>01.
+Rates
+:
+Rates quoted should be on F.O.R., IIT Patna, on Door Delivery
+basis
+.<br>
+02.
+Validity
+:
+Quoted rates must valid for 180 days.<br>
+03.
+Warranty/Guarantee
+:
+The material must be quoted with a minimum comprehensive
+Warranty / Guarantee period of 36 months after the date of delivery and acceptance at final
+destination.<br>
+04.
+EMD:
+In form of DD in favour of ‘
+Registrar, IIT Patna’
+payable at
+‘Patna’
+.<br>
+05.
+Delivery
+:
+Unless otherwise stated delivery of goods at IIT Patna, will have to be maximum
+within 21 days from the date of issue of the Purchase Order. All aspects of safe delivery
+shall be the exclusive responsibility of the OEM / Bidder.<br>
+06.
+Rate of AMC
+:
+Annual Maintenance Contract rate (after expiry of warranty period) is to be
+clearly Indicated (for Equipment only).
+The selected supplier/s is to ensure regular availability of
+spares.<br>
+07.
+Printed conditions of supply of the firm, if any, will not be binding on us.<br>
+08.
+Late and delayed Tenders
+:
+Late and delayed tender will not be considered. In case any
+unscheduled holiday occurs on prescribed closing/opening date the next working day shall
+be the prescribed date of closing/opening.<br>
+09.
+Ground for Rejection of Tender
+:
+The tenders are liable to be rejected if the fore going
+conditions are not complied with. The tender should be complete in all respects and duly
+signed wherever required. Incomplete and unsigned offer will not be accepted.<br>
+10.
+Payment
+Terms:-
+100% payment will be released after receiving of stores in good order
+and condition and successful installation and commissioning duly certified by the concern
+authority. Successful vendor should arrange to submit a
+Performance Bank Guarantee
+to
+the tune of 10% amount of the total purchase value at the time of submitting the bill. This
+Performance Bank guarantee should be issued from any Nationalized Bank and validity of
+the same will be till
+warranty period +60 days
+from the date of delivery / installation of the
+material. The payment will made by RTGS / FUND Transfer mode only.
+Hence, following
+information must be clearly written in the Price Bid for RTGS / FUND TRANSFER:
+(a) Name of the Firm with complete postal address
+(b) Name of the Bank with Branch where the Account exist
+(c) IFSC CODE
+(d) ACCOUNT No
+(e) PAN No
+(f) VAT/TIN No (Required from the vendors belongs to BIHAR)<br>
+11.
+Excise Duty:
+The Institute is exempted from payment of Central Excise Duty vide GOI
+Notification No.10/97-Central Excise, dated 01.03.97 with Regn No.TU/V/RG-
+CDE(1081)/2009, dated 15.04.2009.<br>
+12.
+Entry Tax:
+Entry tax, if applicable will be born by us (generally @8% or as applicable on
+FOR IITP value). Road permit once issued will not change / altered in any circumstances. If
+any alteration is required due to fault from vendor / OEM side the same will be debited to
+supplier’s A/c.<br>
+13.
+Liquidated Damage:
+If a firm accepts an order and fails to execute the order in full as per
+the terms and conditions stipulated therein, it will be open to this institute to recover
+liquidated damages from the firm at the rate of 1% per week of the order value subject to a
+maximum of 10% of the order value. It will also be open to this institute alternatively, to
+arrange procurement of the required stores from
+any other source at the risk and expense of
+the firm, which accepted the order but failed to execute the order according to stipulated
+agreed upon.<br>
+14.
+Termination for default
+:
+Default is said to have occurred:-
+(a) If the supplier fails to deliver any or a
+ll of the services within the time period(s) specified
+in the purchase order or any extension thereof granted by IIT Patna.
+(b)If the supplier fails to perform any other obligation(s) under the contract
+(c) If the vendor, in either of the above circumstances, does not take remedial steps within a
+period of 30 days after receipt of the default notice from IIT (or takes longer period in-spite of
+what IIT may authorize in writing), IIT may terminate the contract / purchase order in
+completely or in part and forfeit the EMD. In addition to above, IIT may at its discretion also
+take the following actions: IIT may procure, upon such terms and in such manner, as it
+deems appropriate, goods similar to the
+undelivered items/products and the defaulting
+supplier shall be liable to compensate IIT for any extra expenditure involved towards goods
+and services to complete the scope of.<br>
+15.
+Applicable Law:
+(a)The contract shall be governed by the
+laws and procedures established by Govt. of India,
+within the framework of applicable legislation and enactment made from time to time
+concerning such commercial dealings/processing.
+(b)All disputes are subject to exclusive juri
+sdiction of Competent Court and Forum in Patna,
+India only.
+(c) Any dispute arising out of this purchase shall be referred to the Registrar IIT Patna, and if
+either of the parties hereto is dissatisfied with the decision, the dispute shall be referred to
+the decision of an Arbitrator, who should be acceptable to both the parties, to be appointed
+by the Director of the Institute. The decision of such Arbitrator shall be final and binding on
+both the parties.<br>
+16. The acceptance of the quotation will rest solely with the Registrar, IIT Patna, who in the
+interest of the Institute is not bound to accept the lowest quotation and reserves the right
+to himself to reject or partially accept any or all the quotations received without assigning
+any reasons.<br>
+17.
+Important:-
+The Director may accept or reject any or all the bids in part of in full without
+assigning any reason and doesn’t bind himself to accept the lower bid. The institute at its
+discretion may change the quantity / upgrade the criteria / drop any item or there of at any
+time before placing the Purchase Order.<br>
+
+		 </p>
+
+		<center><h3>ADDITIONAL TERMS FOR IMPORTED GOODS</h3><center>
+		<h3> Following terms besides the fore mentioned terms will be applicable in case of
+foreign purchases: </h3>
+		<p>01.
+Rates:
+Quoted rates should be in FCA/FOB terms and charges to be stated in the following
+break-<br>
+(a) Ex-works value<br>
+(b) + Documentation & Handling Charge, if any<br>
+(c) Total FOB/FCA value.<br><br>
+02.
+After Sales Service:
+In case of imported items, foreign manufacturing firms should indicate
+facilities available for after sales service, detail address and contact number of their local
+representative in India without which their offers are liable to be ignored.<br>
+03.
+Delivery:<br>
+(a)Delivery of goods at IIT Patna, will have to be maximum within 30 (thirty) days from the
+date of issue of the Purchase Order.<br>
+(b)
+Delivery at Kolkata Airport only:
+As we do not have clearing agent in any other Airport,
+delivery is to be made only at Kolkata through our freight forwarder.<br>
+(c)While transshipment will be allowed, part shipment will not be allowed.<br><br>
+04.
+Payment:<br>
+(i) Payment by an irrevocable letter of Credit (90% against delivery and rest 10% after
+successful installation of the Equipment) at FOB/FCA value non-negotiable through any
+overseas branch of State Bank of India with unrestricted provision. All bank charges inside
+India will be borne by IIT Patna and outside India will be to supplier’s A/c.<br>
+OR<br>
+(ii)<br>
+100% Payment Basis
+: 100% payment by TT Swift / DD against delivery and installation
+will be made. In this case, on receipt of
+your Order Acknowledgement and document (i.e.
+AWB and MWB) through our freight & forwarder payment will be made for total ordered
+value.<br>
+Note:
+Please note LC will not be opened unless and until Letter of Acknowledgement in
+original is received at IIT Patna, directly fr
+om the principal (Even in case of firms having
+subsidiary office in India). The Indian agents are therefore advised to submit quotation after
+consultation with their respective principals)
+.<br><br>
+05.
+Customs Duty:
+The Institute is
+exempted
+from payment of Customs Duty vide GOI
+Notification No.51/96-Customs, dated 23.07.96, with Regn. No. TU/V/RG-
+CDE (1081)/2012, dated 26.10.2012. [CUSTOMS DUTY EXEMPTION
+CERTIFICATE WILL BE MADE AVAILABLE BY THE INSTITUTE IN
+REGARD TO QUOTES IN FOREIGN CURRENCY ONLY
+[ NOT
+AGAINST QUOTES MADE BY A FIRM IN INDIAN CURRENCY,
+UNLESS THE CONCERNED FIRM IS A FOREIGN HOLDING
+COMPANY WITH `FDI’ CERTIFICATE ISSUED BY THE MINISTRY OF
+FINANCE, GOVT. OF INDIA ].<br>
+06.
+Agency Commission:
+The percentage of ex-works value to be paid to Indian agent in
+equivalent Indian currency as agency commission as applicable
+will have to be clearly stated in the quotation wherever applicable.<br>
+07.
+Country of Origin:
+While Country of Origin Certificate will not be insisted, the same
+however will have to be stated in the Original Invoice for payment
+through LC.<br>
+08.
+LC Amendment:
+LC amendment charges due to mistake on the part of the supplier,
+if any, will have to be borne by the supplier.<br>
+09.
+Others
+: Institute is also ready to purchase the goods on “High Sea Sale
+Basis” agreement. In this, Institute will provide all assistance to
+supplier and supplier will Import the goods on behalf of IIT Patna
+and payment will be done in Rupees against delivery like
+Indigenous purchase.<br>
+  </p>
+	
+
+	</div>
+	{% endblock %}
+</body>
+</html>

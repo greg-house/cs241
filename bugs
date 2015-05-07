@@ -1,0 +1,40 @@
+GENERAL:--------------------------------------------------------------------------------------------
+
+-1)sessions : without login can visit stud,prof,sponsor 
+*2)Remove vendor login from login page(not working properly)
+*3)no "change password"
+*4)sponsor login: upcoming projects to be sponsored can be shown
+*5)prof login:rejected projects can be shown
+*6)tender list:do something
+*7)grant register missing in admin page
+
+
+PROJECT:---------------------------------------------------------------------------------------------
+-1)project .. Department????????? (can be of multiple departments)
+*2)sriru officer should be able to see the estimated cost(i.e sum of all est_cost of sanc heads) of project b4 approving
+?3)in appr_amt_sanc head check if tot_amt=amount given
+-4)add copi not working properly
+-5)grant part completly missing
+
+
+PURCHASE:--------------------------------------------------------------------------------------------
+?1)there is no mechanism to check who is making a purchase indent..only a pi can make it
+-2)remove sanchead from fellowship form
+*3)expense table not elaborate..should contain hedings&&left/used money
+*4)expense table should also be present near officer when approving purchase
+*5)Unapproved purchase listing under the name:unapproved projects
+-6)Purhase object should return something
+*7)from purchase_dur form got redirected to purchase form(this should not happen)
+-8)After generating debit advice increment not being saved
+9)money not deducted after purchase
+
+FORMS & INPUT VALIDATION:-----------------------------------------------------------------------------
+-1)no input validation for branch num in both sponsor and vendor
+-2)project duration:specify in months
+*3)in all forms specify date format--------if possible see date constraints(preferably use calender entry)
+*4)Add new Project form.. what is link to admin page doing????
+*5)Add sponsorship form: merge submit button with other two:(i.e)submit and add more sponsors && submit and add appr_amt....
+*6)fellowship form having link to admin page?????
+
+
+

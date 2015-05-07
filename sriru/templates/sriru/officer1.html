@@ -1,0 +1,145 @@
+<!Doctype HTML>
+<html>
+<title>
+	SRIRU
+</title>
+<head>
+{% load static %}
+
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+
+</head>
+<body style="width:100%;height:100%;">
+{% block content %}
+<div style="background-color:#BFFF1B;border: 3px solid #6A7F34;">
+<center>
+<img src="{%static "sm_logo.png"%}">
+</center>
+</div>
+<center>
+<nav class="navbar navbar-inverse" style="width:45%" role="navigation">
+	<div class="navbar-header">
+		<a id="1" class="navbar-brand" href="javascript:return false;">Home</a>
+		<a id="2" class="navbar-brand" href="javascript:return false;">App Project</a>
+		<a id="3" class="navbar-brand" href="javascript:return false;">UnApp Projects</a>
+		<a id="4" class="navbar-brand" href="javascript:return false;">Purchase List</a>
+		<a id="5" class="navbar-brand" href="/sriru/logout4">Logout</a>
+	</div>
+</nav>
+</center>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.item').fadeOut();
+	$('.navbar-brand').click(function() {
+		p = $(this).attr('id');
+		$('.item').fadeOut();
+		p = p + 'a';
+		$('#'+p).fadeIn();
+	});
+});
+</script>
+<center>
+<!--table border="2" style="width:75%"-->
+<div id="1a" class="item">
+<td>
+<center>
+<h3>HOME</h3>	
+</center>
+<style>
+.item {
+	display:none;
+}
+</style>
+</div>
+</center>
+<div id="2a" class="item">
+	<td>
+		<center>
+			<h3>Approved Project</h3>
+		</center>
+	</td>
+</div>
+<div id="3a" class="item">
+<td>
+<center>
+		<h3>Unapproved Projects</h3>
+			{% for proj in project %}
+			<li><a href="/sriru/proj/{{proj.id}}">{{ proj.title }}</a>
+			<br>
+			<a href="/sriru/projapprove/{{proj.pk}}/"><span class="badge">Approve</span></a></li>
+			<a href="/sriru/projreject/{{proj.pk}}/"><span class="badge">Reject</span></a></li>
+		{% endfor %}  
+
+</div>
+</center>
+<div id="4a" class="item">
+<td>
+<center><h3>Unapproved Purchase List</h3>
+		<div style="width:40%;height:40%;border:solid;">
+	Unapproved Purchase Listing here<br>
+	{% for p in purchase %}
+		<p>Project:<a href="/sriru/proj/{{ p.sanc_head.project.pk }}">{{p.sanc_head.project.title}}</a></p>
+		<p>PI:<a href="/sriru/prof/{{p.sanc_head.project.PI.pk}}">{{p.sanc_head.project.PI}}</a></p>
+		<p>Estimated Cost:{{p.est_cost}}</p>
+		<p>Sanction Head:{{p.sanc_head}}</p>
+		<p>Existing Amount in Sanction Head:</p>
+		<p>Total Existing Amount:</p>
+		<p>Item:{{p.prod_title}}</p>
+		<p>Item Specifications:{{p.prod_spec}}</p>
+		<p>Quantity:{{p.quantity}}</p>
+		<a href="/sriru/approve1/{{p.pk}}"><span class=badge>Approve</span></a>
+	{% endfor %}
+	</div>
+</center>
+
+</div>
+<!--br>
+			<div id="" class="col-xs-4" style="border:solid">
+		<p>Unapproved Projects</p>
+			{% for proj in project %}
+			<li><a href="/sriru/proj/{{proj.id}}">{{ proj.title }}</a>
+			<br>
+			<a href="/sriru/projapprove/{{proj.pk}}/"><span class="badge">Approve</span></a></li>
+			<a href="/sriru/projreject/{{proj.pk}}/"><span class="badge">Reject</span></a></li>
+		{% endfor %} 
+	</div>
+
+	<div style="width:40%;height:40%;border:solid;">
+	Unapproved Purchase Listing here<br>
+	{% for p in purchase %}
+		<p>Project:<a href="/sriru/proj/{{ p.sanc_head.project.pk }}">{{p.sanc_head.project.title}}</a></p>
+		<p>PI:<a href="/sriru/prof/{{p.sanc_head.project.PI.pk}}">{{p.sanc_head.project.PI}}</a></p>
+		<p>Estimated Cost:{{p.est_cost}}</p>
+		<p>Sanction Head:{{p.sanc_head}}</p>
+		<p>Existing Amount in Sanction Head:</p>
+		<p>Total Existing Amount:</p>
+		<p>Item:{{p.prod_title}}</p>
+		<p>Item Specifications:{{p.prod_spec}}</p>
+		<p>Quantity:{{p.quantity}}</p>
+		<p>{{p.approval}}</p>
+		<a href="/sriru/approve1/{{p.pk}}"><span class=badge>Approve</span></a>
+	{% endfor %}
+	</div>
+
+	<!--div style="width:40%;height:40%;border:solid;">
+	Approved Project Listing here<br>
+	{% for proj in approvedproj %}
+	<p><a href="/sriru/proj/{{ proj.pk }}">{{ proj.title }}</a></p>
+	{% endfor %} 
+	</div>
+
+		<p><a href="/sriru/new_proj" >Add new Project></a><p>
+			 <!-- add link details 	
+
+			 {{r}}
+	<p><a href="/sriru/logout">Logout</a></p-->
+
+	{% endblock %}
+
+	<!--	<p><a href="/sriru/purchase">Buy Item></a><p>
+-->
+</body>
+</html>

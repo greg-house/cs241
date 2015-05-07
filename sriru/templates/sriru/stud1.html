@@ -1,0 +1,33 @@
+<!Doctype HTML>
+<html>
+<body style="background:#DCDCDC">
+{% load static %}
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+{% block content %}
+<div style="background-color:#BFFF1B;border: 3px solid #6A7F34;">
+<center>
+<img src="{%static "sm_logo.png"%}">
+</center>
+</div>
+{% csrf_token %}
+		<h5>Projects:</h5>
+		<ul>				
+		{% for f in fellow %}
+		<li>Project title:</li>
+		<p><a href="/sriru/proj/{{f.project.id}}">{{f.project.title}}</a></p>         
+		<li>Project PI:</li>                 
+		<p>
+			 {{f.project.PI}}             
+		</p>
+		<br>
+		{% endfor %}
+		<br>
+		<p><a href="">{{ stud.name }}</a><p>
+		<p><a href="/sriru/logout1"><span class=badge>Logout</span></a></p>
+	{% endblock %}
+
+</body>
+</html>

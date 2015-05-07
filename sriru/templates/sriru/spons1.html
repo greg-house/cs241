@@ -1,0 +1,46 @@
+<!Doctype HTML>
+<html>
+<title>
+	SRIRU
+</title>
+<head>
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+</head>
+<body>
+<body style="background-color:#DCDCDC">
+<div style="background-color:#BFFF1B;border: 5px solid #6A7F34">
+<center>
+<img src="{% static "sm_logo.png" %}">
+</center>
+</div>
+
+{% block content %}
+	
+	
+	{% for p in q %}
+		<p><a href="/sriru/proj/{{p.id}}">{{ p.project.title }}</a>         
+	              
+		<div class= "project_PI">
+			 {{ p.project.PI }}             
+		</div></p>
+	{% endfor %}
+	Projects open for Sponsorship
+	{% for p in projects %}
+		<p><a href="/sriru/proj/{{p.id}}">{{ p.title }}</a>         
+	              
+		<div class= "project_PI">
+			 {{ p.PI }}             
+		</div></p>
+	{% endfor %}
+	<br>
+	<br>
+		{{ spons.name}}<br>
+		
+		<p><a href="/sriru/logout3"><span class=badge>Logout</span></a></p>
+{% endblock %}
+
+</body>
+</html>

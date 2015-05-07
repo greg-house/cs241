@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<body style="background:#DCDCDC">
+{% load static %}
+
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+{% block content %}
+<div style="background-color:#BFFF1B;border: 3px solid #6A7F34;">
+<center>
+<img src="{%static "sm_logo.png"%}">
+</center>
+</div>
+<H2><CENTER>CHANGE PASSWORD</CENTER></H2>
+<p>{{state}}</p>
+<CENTER>
+{% if a %}
+<form action="/sriru/changepass" method="POST">{%csrf_token%}
+<ul >
+<h4>Professor:{{a}}</h4>
+<div style="color:#000000">
+<table>
+
+
+		<tr>
+        <td><input id="us2_name" maxlength="40" name="user_name" value="{{a}}" type="hidden" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CURRENT PASSWD:</label></td>
+        <td><input id="us2_pwd" maxlength="40" name="user_pwd" type="password" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">NEW PASSWD:</label></td>
+        <td><input id="us2_npwd" maxlength="40" name="user_npwd" type="password" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CONFIRM PASSWD:</label></td>
+        <td><input id="us2_cpwd" maxlength="40" name="user_cpwd" type="password" /></td>
+        </tr>
+        
+	
+ </table>   
+ <input type="submit" name="submit" class="btn btn-info" value="CHANGE PASSWORD" >    
+</div>
+</ul>
+</form>
+<br>
+{% endif %}
+{% if b %}
+<br>
+<form action="/sriru/changepass" method="POST">{%csrf_token%}
+<ul>
+<h4>Student:{{b}}</h4>
+<div  style="color:#000000">
+<table>
+
+
+		<tr>
+        <td><input id="us2_name" maxlength="40" name="user_name" value="{{b}}" type="hidden" ></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CURRENT PASSWD:</label></td>
+        <td><input  type="password" id="us2_pwd" maxlength="40" name="user_pwd" ></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">NEW PASSWD:</label></td>
+        <td><input  type="password" id="us2_npwd" maxlength="40" name="user_npwd"  ></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CONFIRM PASSWD:</label></td>
+        <td><input id="us2_cpwd" maxlength="40" name="user_cpwd" type="password" ></td>
+        </tr>
+ </table>    
+ <input type="submit" name="submit" class="btn btn-info" value="CHANGE PASSWORD" >
+   
+</div>
+</ul>
+</form>
+<br>
+{% endif %}
+{% if c %}
+<br>
+
+<form action="/sriru/changepass" method="POST">{%csrf_token%}
+<ul>
+<h4>Sriru-Coord:{{c}}</h4>
+<div  style="color:#000000">
+<table>
+
+
+		<tr>
+        <td><input id="us2_name" maxlength="40" name="user_name" value="{{c}}" type="hidden" ></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CURRENT PASSWD:</label></td>
+        <td><input id="us2_pwd" maxlength="40" name="user_pwd" type="password"></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">NEW PASSWD:</label></td>
+        <td><input id="us2_npwd" maxlength="40" name="user_npwd" type="password" ></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CONFIRM PASSWD:</label></td>
+        <td><input id="us2_cpwd" maxlength="40" name="user_cpwd" type="password" ></td>
+        </tr>
+ </table>    
+ <input type="submit" name="submit" class="btn btn-info" value="CHANGE PASSWORD" >   
+</div>
+</ul>
+</form>
+<br>
+{% endif %}
+{% if d %}
+<br>
+<form action="/sriru/changepass" method="POST">{%csrf_token%}
+<ul>
+<h4>Admin:{{d}}</h4>
+<div  style="color:#000000">
+<table>
+ 
+
+		<tr>
+        <td><input id="us2_name" maxlength="40" name="user_name" value="{{d}}" type="hidden" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CURRENT PASSWD:</label></td>
+        <td><input id="us2_pwd" maxlength="40" name="user_pwd" type="password" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">NEW PASSWD:</label></td>
+        <td><input id="us2_npwd" maxlength="40" name="user_npwd" type="password" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CONFIRM PASSWD:</label></td>
+        <td><input id="us2_cpwd" maxlength="40" name="user_cpwd" type="password" /></td>
+        </tr>
+ </table>    
+ <input type="submit" name="submit" class="btn btn-info" value="CHANGE PASSWORD" >
+   
+</div>
+</ul>
+</form>
+<br>
+{% endif %}
+{% if e %}
+<br>
+<form action="/sriru/changepass" method="POST">{%csrf_token%}
+<ul>
+<h4>Sponsor:{{e}}</h4>
+<div  style="color:#000000">
+<table>
+
+
+		<tr>
+        <td><input id="us2_name" maxlength="40" name="user_name" value="{{e}}" type="hidden" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CURRENT PASSWD:</label></td>
+        <td><input id="us2_pwd" maxlength="40" name="user_pwd" type="password" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">NEW PASSWD:</label></td>
+        <td><input id="us2_npwd" maxlength="40" name="user_npwd" type="password" /></td>
+        </tr>
+        <tr>
+        <td><label for="id_name">CONFIRM PASSWD:</label></td>
+        <td><input id="us2_cpwd" maxlength="40" name="user_cpwd" type="password" /></td>
+        </tr>
+
+ </table>   
+ <input type="submit" name="submit" class="btn btn-info" value="CHANGE PASSWORD" >
+</div>
+</ul>
+</form>
+{% endif %}
+{% endblock %}
+<div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!Doctype HTML>
+<html>
+<title>
+	SRIRU
+</title>
+<head>
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+</head>
+<body>
+{% block content %}
+<table border='5' style="width:100%" class="table-hover table">
+		<tr>
+			
+			Sanction Table
+		</tr>
+		<tr>
+		    <td>Sanction Head</td>
+		    <td>Approved Amount</td>
+		    <td>Funds Allocated</td>		
+		    <td>Balance Amount</td>
+		</tr>
+	{% for p in sanc %}
+		<tr>
+		    <td>{{p.name}}</td>
+		    <td>{{p.appr_amount}}</td>		
+		    <td>{{p.left_amt}}</td>
+		</tr>
+	{% endfor %}
+</table>
+</table>
+{% endblock %}
+</body>
+</html>

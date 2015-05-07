@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+
+
+<body style="width:100%;height:100%;backgroud-color:#DCDCDCS">
+{% block content %}
+<div style="background-color:#BFFF1B;border: 3px solid #6A7F34;">
+<center>
+<center>
+<img src="{% static "sm_logo.png" %}">
+</center>
+</div>
+	<h1></h1><CENTER><U><FONT SIZE="10">{{proj.title}}</FONT></U></CENTER></h1>
+	<BR>
+<form method="POST" action="/sriru/appr_sanchead/{{proj_id}}/">{% csrf_token %}
+<CENTER>
+{% for s in sanc %}
+	<label>{{s.name}}:[Est Amount : {{s.est_amount}}]</label>
+	<br>
+	<label>Amount Approved</label>
+	<input type="text" name="{{s.pk}}" placeholder="Enter Amount in Rs." pattern="^[0-9]{1,}$" title="Only numeric inputs {enter 0  if null}">
+	<br>
+	<br>
+{% endfor %}
+</CENTER>
+<center>
+	<input name="submit" type="submit" value="submit amount" class="btn btn-primary">
+
+	</center>
+</form>
+{% endblock %}
+
+</body>
+</html>

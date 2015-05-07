@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<hea
+	<title></title>
+</head>
+<body style="background:#DCDCDC">
+{% load static %}
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.4-dist/css/bootstrap.min.css" %}">
+<script type="text/javascript" src="{% static "bootstrap-3.3.4-dist/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-2.1.3.min.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "jquery-ui-1.9.2.custom/css/start/jquery-ui-1.9.2.custom.min.css" %}">
+<script type="text/javascript"  src="{%static "jquery-ui-1.9.2.custom/js/jquery-1.8.3.js"%}"></script>
+<script type="text/javascript"  src="{%static "jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.js"%}"></script>
+<script type="text/javascript"  src="{%static "jquery-ui-1.9.2.custom/jquery-ui-1.9.2.custom.min.js"%}"></script>
+<script>
+$(function() {
+  $( "#id_date_payment " ).datepicker();
+});
+</script>
+<style type="text/css">
+    #ui-datepicker-div {
+        
+    }
+    .ui-datepicker-calendar {
+        background-color:#aaaaaa;
+
+    }
+    .ui-datepicker-header {
+        background: rgba(130,121,101,1);
+    }
+
+{% block content %}
+<div style="background-color:#BFFF1B;border: 3px solid #6A7F34;">
+<center>
+<img src="{%static "sm_logo.png"%}">
+</center>
+</div>
+<h2><center>GRANT DETAILS</center>
+<form action="/sriru/grant/{{proj_id}}/" method="POST">{% csrf_token %}
+<center>
+<ul>
+<div style="color:#000000">
+
+<table>
+{% for field in form %}
+		<tr>
+        <td><font size="2">{{ field.label_tag }}</font></td>
+        <td><font size="2">{{ field }}</font></td>
+        <td><font  size="3"color="red">{{ field.errors }}</font></td>
+        </tr>
+
+{% endfor %}
+    <tr>
+    <td></td>
+    <td><input type="submit" name="submit" class="btn btn-info" value="SUBMIT"></td>
+    </tr>
+</table>
+</div>
+</ul>
+<center>
+
+</center>
+{% endblock %}
+</body>
+</html>
